@@ -4,6 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import cardapio from 'data/cardapio.json';
 import TagsPrato from 'components/TagsPrato';
 import NotFound from 'pages/NotFound';
+import Layout from 'components/Layout';
 
 function Prato() {
   const { id } = useParams();
@@ -13,7 +14,7 @@ function Prato() {
     return <NotFound />;
   }
   return (
-    <>
+    <Layout>
       <button onClick={() => navigate(-1)} className={styles.voltar}>
         {'<- Voltar'}
       </button>
@@ -27,7 +28,7 @@ function Prato() {
           <TagsPrato {...prato} />
         </div>
       </section>
-    </>
+    </Layout>
   );
 }
 

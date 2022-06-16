@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom';
 import styles from './Layout.module.scss';
 import stylesTema from 'styles/Tema.module.scss';
 
-const Layout: React.FC = () => {
+const Layout: React.FC = ({ children }: { children?: React.ReactNode }) => {
   return (
     <>
       <header className={styles.header}>
@@ -11,6 +11,7 @@ const Layout: React.FC = () => {
       </header>
       <div className={stylesTema.container}>
         <Outlet />
+        {children}
       </div>
     </>
   );
